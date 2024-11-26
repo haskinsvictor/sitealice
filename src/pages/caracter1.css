@@ -1,0 +1,74 @@
+.caractere1 {
+    display: flex;
+    flex-direction: column; /* Permet une meilleure organisation verticale */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: transparent; /* Supprime le fond gris */
+    padding: 20px; /* Ajoute un espacement autour du contenu */
+    box-sizing: border-box; /* Inclut les marges et bordures dans la taille totale */
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px; /* Augmente l'écart entre les boutons */
+    margin-top: 20px; /* Ajoute un espace entre les boutons et les autres éléments */
+  }
+  
+  .button-container button {
+    padding: 15px 25px; /* Augmente la taille des boutons pour une meilleure visibilité */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Texte plus lisible */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container button:hover {
+    background-color: #45a049; /* Change de couleur au survol pour un effet interactif */
+  }
+  
+  .button-container.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .character-container.fade-in {
+    opacity: 1;
+  }
+  
+  .character {
+    position: relative;
+  }
+  
+  .character-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px; /* Ajoute un espace entre l'image et la bulle */
+  }
+  
+  .bubble {
+    position: absolute;
+    bottom: 160px;
+    background-color: #fff;
+    padding: 15px; /* Augmente l'espace intérieur de la bulle */
+    border-radius: 15px; /* Coins arrondis plus marqués */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre légèrement plus prononcée */
+    max-width: 90%; /* Laisse plus d'espace pour le contenu */
+    font-size: 18px; /* Texte plus grand pour une meilleure lisibilité */
+    color: #333;
+    line-height: 1.5; /* Améliore l'espacement entre les lignes */
+    text-align: center; /* Centre le texte à l'intérieur de la bulle */
+  }
+  

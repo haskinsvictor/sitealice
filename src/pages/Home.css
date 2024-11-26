@@ -1,0 +1,95 @@
+/* Styles pour centrer le contenu de la page */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Conteneur du personnage */
+.character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    z-index: 1; /* Positionne le conteneur en arrière-plan */
+}
+
+.character-container.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Le personnage */
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Permet de positionner la bulle par rapport au personnage */
+    cursor: pointer;
+    z-index: 2; /* Assure que le personnage est au-dessus du fond */
+}
+
+/* Image du personnage */
+.character-image {
+    width: auto; /* Ajuste automatiquement la largeur en fonction de la hauteur */
+    height: 150px; /* Taille fixe */
+    object-fit: contain; /* Préserve les proportions */
+}
+
+/* Bulle de texte */
+.bubble {
+    position: absolute;
+    top: calc(100% + 10px); /* Place la bulle sous le personnage avec un espace */
+    left: 50%; /* Centre horizontalement par rapport au personnage */
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 15px; /* Ajuste la taille en fonction du texte */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    min-width: 150px; /* Largeur minimale */
+    max-width: 300px; /* Largeur maximale */
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
+    z-index: 3; /* Assure que la bulle est au-dessus du personnage */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Triangle pour la bulle */
+.bubble:before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Positionne le triangle au-dessus de la bulle */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent; /* Triangle blanc */
+}
+
+/* Animation pour les boutons au démarrage */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.button-container.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
